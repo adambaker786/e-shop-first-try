@@ -7,6 +7,7 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      orders: [],
       items: [
         {
           id: 1,
@@ -50,6 +51,7 @@ class App extends React.Component {
         },
       ]
     }
+    this.addToOrder = this.addToOrder.bind(this)
   }
   render() {
   return (
@@ -59,6 +61,9 @@ class App extends React.Component {
       <Footer></Footer>
     </div>
   );
+ }
+ addToOrder(item) {
+  this.setState({ orders: [...this.state.orders, item] })
  }
 }
 
